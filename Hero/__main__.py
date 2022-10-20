@@ -236,7 +236,7 @@ home_text_pm = f"""ʜᴇʟʟᴏ ,
 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: / """
 
 
-@app.on_message(filters.command(["help", "start"]) & filters.private)
+@app.on_message(filters.command(["help"]) & filters.private)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await app.send_message(message.chat.id, text, reply_markup=keyboard)
@@ -384,7 +384,7 @@ async def help_parser(name, keyboard=None):
     )
 
 
-@app.on_callback_query(filters.regex("shikha"))
+@app.on_callback_query(filters.regex("shikhar"))
 async def shikhar(_, CallbackQuery):
     text, keyboard = await help_parser(CallbackQuery.from_user.mention)
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
