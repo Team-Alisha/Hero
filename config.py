@@ -11,7 +11,7 @@ if os.path.exists("Internal"):
 get_queue = {}
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH", "")
+API_HASH = getenv("API_HASH")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "900"))
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
